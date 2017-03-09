@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/09/Hello-World-0/">Hello World</a>
+      <a class="article-title" href="/2017/03/09/Hello-World-0/">丁才的第一篇博客</a>
     </h1>
   
 
@@ -83,17 +83,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Volly 请求</p>
-<p>###Get 请求<br>关于get请求的。。。。<br>ddd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public NetworkDispatcher(BlockingQueue&lt;Request&lt;?&gt;&gt; queue,</div><div class="line">            Network network, Cache cache,</div><div class="line">            ResponseDelivery delivery) &#123;</div><div class="line">        mQueue = queue;</div><div class="line">        mNetwork = network;</div><div class="line">        mCache = cache;</div><div class="line">        mDelivery = delivery;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>###Post 请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">private void addTrafficStatsTag(Request&lt;?&gt; request) &#123;</div><div class="line">        // Tag the request (if API &gt;= 14)</div><div class="line">        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.ICE_CREAM_SANDWICH) &#123;</div><div class="line">            TrafficStats.setThreadStatsTag(request.getTrafficStatsTag());</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>##Volley缓存</p>
-<p>##文件缓存</p>
-<p>##请求是否使用缓存</p>
-
+        <h2 id="Volly-请求"><a href="#Volly-请求" class="headerlink" title="Volly 请求"></a>Volly 请求</h2><h3 id="Get-请求"><a href="#Get-请求" class="headerlink" title="Get 请求"></a>Get 请求</h3><p>关于get请求的。。。。<br>ddd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public NetworkDispatcher(BlockingQueue&lt;Request&lt;?&gt;&gt; queue,</div><div class="line">            Network network, Cache cache,</div><div class="line">            ResponseDelivery delivery) &#123;</div><div class="line">        mQueue = queue;</div><div class="line">        mNetwork = network;</div><div class="line">        mCache = cache;</div><div class="line">        mDelivery = delivery;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Post-请求"><a href="#Post-请求" class="headerlink" title="Post 请求"></a>Post 请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">private void addTrafficStatsTag(Request&lt;?&gt; request) &#123;</div><div class="line">        // Tag the request (if API &gt;= 14)</div><div class="line">        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.ICE_CREAM_SANDWICH) &#123;</div><div class="line">            TrafficStats.setThreadStatsTag(request.getTrafficStatsTag());</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="Volley缓存"><a href="#Volley缓存" class="headerlink" title="Volley缓存"></a>Volley缓存</h2><h2 id="文件缓存"><a href="#文件缓存" class="headerlink" title="文件缓存"></a>文件缓存</h2><h2 id="请求是否使用缓存"><a href="#请求是否使用缓存" class="headerlink" title="请求是否使用缓存"></a>请求是否使用缓存</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/Hello-World-0/" data-id="cj02ib2a800000qks9mfnl93a" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/09/Hello-World-0/" data-id="cj02ib2a800000qks9mfnl93a" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -138,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/hello-world/" data-id="cj02ib2ad00010qks19l5ayx4" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/09/hello-world/" data-id="cj02ib2ad00010qks19l5ayx4" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -163,7 +159,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
@@ -173,12 +169,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/03/09/Hello-World-0/">Hello World</a>
+            <a href="/2017/03/09/Hello-World-0/">丁才的第一篇博客</a>
           </li>
         
           <li>
@@ -198,7 +194,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 dc7878<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
