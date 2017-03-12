@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -87,11 +87,12 @@
 <h2 id="Android-ViewGroup事件分发说明"><a href="#Android-ViewGroup事件分发说明" class="headerlink" title="Android ViewGroup事件分发说明"></a>Android ViewGroup事件分发说明</h2><h3 id="关于dispatchTouchEvent"><a href="#关于dispatchTouchEvent" class="headerlink" title="关于dispatchTouchEvent"></a>关于dispatchTouchEvent</h3><p>如果事件能够传递到当前ViewGroup的话，那么它的dispatchTouchEvent一定会调用;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public boolean dispatchTouchEvent(MotionEvent e) &#123;</div><div class="line">	if (e.getAction() == DOWN) &#123;</div><div class="line">		clearTouchTarget();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	if (e.getAction == DOWN || mTarget != null) &#123;</div><div class="line">		if (!disallowIntercept) &#123;</div><div class="line">			intercept = onIntercepteTouchEvent(e);</div><div class="line">		&#125; else &#123;</div><div class="line">			intercept = false;</div><div class="line">		&#125;</div><div class="line">	&#125; else&#123;</div><div class="line">		intercepte = true;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>首先会在DOWN的时候清除子项的拦截标记,如果是DONW事件则判断是否已经找到了当前处理该事件序列的子项，如果没有找到了那么<br>就调用当前ViewGroup的onInterceptTouchEvent(e),如果找到了处理的子项，那么onIterceptTouchEvent方法不会再次被<br>调用。</p>
 <p>##Android View事件分发说明<br>首先调用dispatchTouchEvent方法,View不存在子项，所以不会调用子项的dispatchTouchEvent方法，同时也没有<br>onInterceptTouchEvent方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public boolean dispatchTouchEvent(MotionEvent e) &#123;</div><div class="line">	boolean result = false;</div><div class="line">	if (li != null &amp;&amp; li.listener != null &amp;&amp; enable &amp;&amp; li.listener.onTouchListener(this, e)) &#123;</div><div class="line">		result = true;</div><div class="line">	&#125;</div><div class="line">	if (!result &amp;&amp; onTouchEvent(e)) &#123;</div><div class="line">		result = true;</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public boolean onTouchEvent（MotionEvent e) &#123;</div><div class="line">	if (clickAble || longClickAble) &#123;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line">	return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="滑动冲突处理"><a href="#滑动冲突处理" class="headerlink" title="滑动冲突处理"></a>滑动冲突处理</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/12/Android 事件分发/" data-id="cj06qcek90003tsksxzn391ln" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/12/Android 事件分发/" data-id="cj06qxyfi0000v7ks3w31q9bw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/10/jQuery学习笔记/" data-id="cj06qceka0004tsksroogmzs2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/10/jQuery学习笔记/" data-id="cj06qxyft0003v7ksb7dutk3m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/Volley/" data-id="cj06qcek30001tsksgpyxpgvb" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/09/Volley/" data-id="cj06qxyfo0001v7ksec6w9ztw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/Hello-World-0/" data-id="cj06qcek70002tskslrdrmzjq" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/09/Hello-World-0/" data-id="cj06qxyfu0004v7ksstoudw9u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/hello-world/" data-id="cj06qcejx0000tsksi1oyn7uv" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/09/hello-world/" data-id="cj06qxyfr0002v7ksuels0q92" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +283,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -319,7 +320,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 dc7878<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
