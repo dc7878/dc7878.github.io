@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Android 事件分发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/12/Android 事件分发/" class="article-date">
+  <time datetime="2017-03-12T13:21:01.000Z" itemprop="datePublished">2017-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/Android 事件分发/">Android 事件分发</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android事件分发说明"><a href="#Android事件分发说明" class="headerlink" title="Android事件分发说明"></a>Android事件分发说明</h2><p>Android事件处理主要是dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent;<br>关于这三个方法调用的关系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public void dispatchTouchEvent(MotionEvent e) &#123;</div><div class="line">	boolean consume = false;</div><div class="line">	if（onInterceptTouchEvent(e)） &#123;</div><div class="line">		consume = true;</div><div class="line">	&#125; else &#123;</div><div class="line">		consume = child.dispatchTouchEvent(e);</div><div class="line">	&#125;</div><div class="line">	return consume;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Android-ViewGroup事件分发说明"><a href="#Android-ViewGroup事件分发说明" class="headerlink" title="Android ViewGroup事件分发说明"></a>Android ViewGroup事件分发说明</h2><h3 id="关于dispatchTouchEvent"><a href="#关于dispatchTouchEvent" class="headerlink" title="关于dispatchTouchEvent"></a>关于dispatchTouchEvent</h3><p>如果事件能够传递到当前ViewGroup的话，那么它的dispatchTouchEvent一定会调用;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public void dispatchTouchEvent(MotionEvent e) &#123;</div><div class="line">	if (e.getAction() == DOWN) &#123;</div><div class="line">		clearTouchTarget();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	if (e.getAction == DOWN || mTarget != null) &#123;</div><div class="line">		if (!disallowIntercept) &#123;</div><div class="line">			intercept = onIntercepteTouchEvent(e);</div><div class="line">		&#125; else &#123;</div><div class="line">			intercept = false;</div><div class="line">		&#125;</div><div class="line">	&#125; else&#123;</div><div class="line">		intercepte = true;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先会在DOWN的时候清除子项的拦截标记,如果是DONW事件则判断是否已经找到了当前处理该事件序列的子项，如果没有找到了那么<br>就调用当前ViewGroup的onInterceptTouchEvent(e),如果找到了处理的子项，那么onIterceptTouchEvent方法不会再次被<br>调用。</p>
+<p>##Android View事件分发说明</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/12/Android 事件分发/" data-id="cj06qcek90003tsksxzn391ln" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jQuery学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/10/jQuery学习笔记/" class="article-date">
@@ -88,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/10/jQuery学习笔记/" data-id="cj03mg7o00003k6ks5qgs8rmn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/10/jQuery学习笔记/" data-id="cj06qceka0004tsksroogmzs2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/Volley/" data-id="cj03mg7nr0000k6ks2csxtgz2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/09/Volley/" data-id="cj06qcek30001tsksgpyxpgvb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/Hello-World-0/" data-id="cj03mg7nz0002k6ksqgki4aoz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/09/Hello-World-0/" data-id="cj06qcek70002tskslrdrmzjq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/09/hello-world/" data-id="cj03mg7nw0001k6ks9j317mxp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/09/hello-world/" data-id="cj06qcejx0000tsksi1oyn7uv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,6 +285,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/12/Android 事件分发/">Android 事件分发</a>
+          </li>
         
           <li>
             <a href="/2017/03/10/jQuery学习笔记/">jQuery学习笔记</a>
